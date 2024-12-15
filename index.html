@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initialscale=1.0" />
+  <title>Jagonya Ayam</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header-wrapper">
+      <header class="header">
+        <h1>JAGONYA AYAM</h1>
+        <p>
+          Selamat Datang di Jagonya Ayam.
+          Kami menyajikan berbagai hidangan ayam yang lezat dan menggugah selera. 
+          Setiap hidangan dibuat dari ayam segar dan bumbu alami, 
+          menjadikan setiap suapan pengalaman yang tak terlupakan.
+        </p>
+        </div>
+      </header>
+    </div>
+
+    <div class="featured-productswrapper">
+      <section class="featured-products">
+        <h2>Produk Unggulan</h2>
+        <div class="products">
+          <div class="product-card">
+            <img src="Ayam Geprek.jpg" width="350" height="170" alt="Produk 1" />
+            <h3>Ayam Geprek</h3>
+            <p>
+              Ayam Geprek kami adalah kombinasi antara ayam goreng crispy yang disajikan dengan sambal super pedas. 
+              Setiap gigitan akan menggugah selera Anda dan membuat Anda ketagihan!
+            </p>
+            <button onclick="openModal('Ayam Geprek')">
+              Beli Sekarang
+            </button>
+          </div>
+          <div class="product-card">
+            <img src="Ayam Bakar.jpg" width="350" height="170" alt="Produk 2" />
+            <h3>Ayam Bakar</h3>
+            <p>
+              Ayam Bakar kami dimarinasi dengan bumbu pilihan dan dibakar hingga sempurna. 
+              Aroma yang menggoda dan rasa yang kaya akan membuat Anda ingin lagi dan lagi!
+            </p>
+            <button onclick="openModal('Ayam Bakar')">
+              Beli Sekarang
+            </button>
+          </div>
+          <div class="product-card">
+            <img src="Ayam Katsu.jpg" width="350" height="170" alt="Produk 3" />
+            <h3>Ayam Katsu</h3>
+            <p>
+              Ayam Katsu kami adalah pilihan yang sempurna bagi pecinta ayam. 
+              Dibalut tepung panir yang renyah dan disajikan dengan saus katsu yang lezat, 
+              hidangan ini pasti memuaskan selera Anda!
+            </p>
+            <button onclick="openModal('Ayam Katsu')">
+              Beli Sekarang
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="buyModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Konfirmasi Pembelian</h2>
+        <p id="modalProductName">Produk:</p>
+        <form id="buyerForm">
+          <div class="form-group">
+            <label for="buyerName">Nama:</label>
+            <input type="text" id="buyerName" placeholder="Masukkan nama anda"/>
+          </div>
+          <div class="form-group">
+            <label for="buyerAlamat">Alamat:</label>
+            <input type="text" id="buyerAlamat" placeholder="Masukkan alamat anda"/>
+          </div>
+          <div class="form-group">
+            <label for="buyerTelepon">Telepon:</label>
+            <input type="text" id="buyerTelepon" placeholder="Masukkan no telepon anda"/>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Jumlah:</label>
+            <div class="quantity-control">
+              <button onclick="decreaseQuantity()" type="button">-</button>
+              <input type="number" id="quantity" value="1" readonly />
+              <button onclick="increaseQuantity()" type="button">+</button>
+            </div>
+          </div>
+          <button type="button" onclick="confirmPurchase()">
+            Konfirmasi
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer-wrapper">
+      <footer class="footer">
+        <p>&copy; 2024 Jagonya Ayam</p>
+      </footer>
+    </div>
+  </div>
+</body>
+
+</html>

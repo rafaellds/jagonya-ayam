@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initialscale=1.0" />
+    <title>Keranjang</title>
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                buyer: params.get("buyer"),
+                alamat: params.get("alamat"),
+                telepon: params.get("telepon"),
+                product: params.get("product"),
+                quantity: params.get("quantity"),
+            };
+        }
+
+        function displayCartDetails() {
+            const {
+                buyer,
+                alamat,
+                telepon: buyerTelepon,
+                product,
+                quantity,
+            } = getUrlParams();
+            if (buyer && alamat && buyerTelepon && product && quantity) {
+                document.getElementById("cartDetails").innerHTML = ` 
+            <h2>Halo, ${buyer}!</h2> 
+            <p>Alamat: ${alamat}</p> 
+            <p>Telepon: ${buyerTelepon}</p> 
+            <p>Anda telah menambahkan <strong>${product}</strong> sebanyak <strong>${quantity}</strong> ke keranjang.</p> 
+          `;
+            } else {
+                document.getElementById("cartDe tails").innerHTML = ` 
+            <p>Keranjang Anda kosong. Silakan kembali ke halaman utama untuk berbelanja.</p> 
+          `;
+            }
+        }
+
+        window.onload = displayCartDetails; 
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Keranjang Belanja</h1>
+        </header>
+        <main>
+            <div id="cartDetails"></div>
+            <a href="index.html">Kembali ke Halaman Utama</a>
+        </main>
+    </div>
+</body>
+
+</html>
